@@ -1,0 +1,56 @@
+<html>
+<head>
+<script>
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='block';
+  document.getElementById(hidden).style.display='none';
+  document.getElementById("name_display").innerHTML = "Hi " + document.getElementById("name").value + " !";
+  return false;
+}
+</script>
+<script src="ChatGPT.js"></script>
+</head>
+<body>
+    
+  <div id="Page1">
+    <h1> Clarity </h1>
+        <form>
+        	<label for="name">Name</label><br>
+        	<input type="text" id="name" name="name"><br>
+        	<p> What are your skin concerns? </p>
+        	<input type="checkbox" id="aging" name="aging" value="aging">
+  			<label for="aging"> Aging</label><br>
+  			<input type="checkbox" id="acne" name="acne" value="acne">
+  			<label for="acne"> Acne</label><br>
+  			<input type="checkbox" id="dryness" name="dryness" value="dryness">
+  			<label for="dryness"> Dryness</label>
+  			<input type="checkbox" id="oiliness" name="oiliness" value="oiliness">
+  			<label for="oiliness"> Oiliness</label>
+  			<input type="checkbox" id="dark_circles" name="dark_circles" value="dark circles">
+  			<label for="dark_circles"> Dark Circles</label>
+  			<input type="checkbox" id="hyper_pigmentation" name="hyper_pigmentation" value="hyper pigmentation">
+  			<label for="hyper_pigmentation"> Hyper Pigmentation</label>
+  			<p> How often do you face skin irritation or redness? </p>
+  			<input type="radio" id="often" name="irritation_redness" value="often">
+  			<label for="often">Often</label><br>
+  			<input type="radio" id="sometimes" name="irritation_redness" value="sometimes">
+  			<label for="sometimes">Sometimes</label><br>
+  			<input type="radio" id="rarely" name="irritation_redness" value="rarely">
+  			<label for="rarely">Rarely</label>
+  			<!-- <input type="submit" value="Submit"> -->
+        </form>
+    <a href="#" onclick="return show('Page2','Page1');"> Submit </a>
+  </div>
+  <div id="Page2" style="display:none">
+	<p id="name_display"> </p>
+	
+	<label for="txtMsg"> Enter the skincare product you want to test match for! </label><br>
+	<input type="text" id="txtMsg" />
+	<div>
+		<button type="button" onclick="Send()" id="btnSend">Send</button>
+	</div><br>
+	<textarea id="txtOutput" rows="10"   border: none; outline: none;
+         placeholder="Output"> </textarea>
+    
+</body>
+</html>
